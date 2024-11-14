@@ -7,10 +7,16 @@ import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
-import { App } from "@/components/App";
+
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { UserLayout } from "@/layouts/User";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <App />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/*" element={<UserLayout />} />
+      </Routes>
+    </BrowserRouter>
   </StrictMode>
 );
